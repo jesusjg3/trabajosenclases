@@ -1,0 +1,301 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API APLICACIONES WEB II",
+        "description": "Documentacion generada auomaticamente con LS-swagger",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/estudiantes": {
+            "get": {
+                "tags": [
+                    "Estudiantes"
+                ],
+                "summary": "Listar estudiantes",
+                "operationId": "209e318b7ac388b93bccf7af4162e33b",
+                "responses": {
+                    "200": {
+                        "description": "Lista de estudiantes"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Estudiantes"
+                ],
+                "summary": "Crear estudiante",
+                "operationId": "bf7df90391b947c8dc2f77570e61358a",
+                "parameters": [
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "application/json"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nombre",
+                                    "cedula",
+                                    "correo",
+                                    "paralelo_id"
+                                ],
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string",
+                                        "example": "Juan Perez"
+                                    },
+                                    "cedula": {
+                                        "type": "string",
+                                        "example": "1234567890"
+                                    },
+                                    "correo": {
+                                        "type": "string",
+                                        "example": "example@exmaple"
+                                    },
+                                    "paralelo_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Estudiante creado exitosamente"
+                    },
+                    "422": {
+                        "description": "Error de validación"
+                    }
+                }
+            }
+        },
+        "/api/estudiantes/{id}": {
+            "put": {
+                "tags": [
+                    "Estudiantes"
+                ],
+                "summary": "Actualizar estudiante",
+                "operationId": "a0d23067013987f1a070c064758e522b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del estudiante a actualizar",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nombre",
+                                    "cedula",
+                                    "correo",
+                                    "paralelo_id"
+                                ],
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string",
+                                        "example": "Juan Perez"
+                                    },
+                                    "cedula": {
+                                        "type": "string",
+                                        "example": ""
+                                    },
+                                    "correo": {
+                                        "type": "string",
+                                        "example": ""
+                                    },
+                                    "paralelo_id": {
+                                        "type": "integer",
+                                        "example": 1
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Estudiante actualizado exitosamente"
+                    },
+                    "404": {
+                        "description": "Estudiante no encontrado"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Estudiantes"
+                ],
+                "summary": "Eliminar estudiante",
+                "operationId": "caeee49dd1fc2f0619a1069d2e414f0b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del estudiante a eliminar",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Estudiante eliminado exitosamente"
+                    },
+                    "404": {
+                        "description": "Estudiante no encontrado"
+                    }
+                }
+            }
+        },
+        "/api/paralelos": {
+            "get": {
+                "tags": [
+                    "Paralelos"
+                ],
+                "summary": "Listar paralelos",
+                "operationId": "30409aa4e072067e1395716421b89f6c",
+                "responses": {
+                    "200": {
+                        "description": "Lista de paralelos"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Paralelos"
+                ],
+                "summary": "Crear paralelo",
+                "operationId": "63f2e6de83fe35723b5077a59ec0f619",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nombre"
+                                ],
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string",
+                                        "example": "P1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Paralelo creado exitosamente"
+                    },
+                    "422": {
+                        "description": "Error de validación"
+                    }
+                }
+            }
+        },
+        "/api/paralelos/{id}": {
+            "put": {
+                "tags": [
+                    "Paralelos"
+                ],
+                "summary": "Actualizar paralelo",
+                "operationId": "09c0363579e6f12d0cf5d6a8934f4fad",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "nombre"
+                                ],
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string",
+                                        "example": "P2"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Paralelo actualizado exitosamente"
+                    },
+                    "422": {
+                        "description": "Error de validación"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Paralelos"
+                ],
+                "summary": "Eliminar paralelo",
+                "operationId": "e1db2fb826fbe8f0eb7a8c73c9222f49",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Paralelo eliminado exitosamente"
+                    },
+                    "404": {
+                        "description": "Paralelo no encontrado"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Estudiantes",
+            "description": "Estudiantes"
+        },
+        {
+            "name": "Paralelos",
+            "description": "Paralelos"
+        }
+    ]
+}
